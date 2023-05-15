@@ -1,31 +1,10 @@
-const year = document.querySelector('.year').value;
-const btn = document.querySelector('.btn');
-const result = document.querySelector('.result');
 
-function checkLeapYear(year) {
-btn.addEventListener('click', () => {
-if (year % 4 == 0) {
-    if (year % 100 == 0) {
-        if (year % 400 == 0) {
-    result.textContent = 'Год является високосным';
-    }
-    else {
-            result.textContent = 'Год не является високосным';
-        }
-    }
-        else {
-            result.textContent = 'Год является високосным';
-        }
-        }
-        else {
-            result.textContent = 'Год не является високосным';
-        }
+const year = +prompt('Введите год');
 
-    });
+if ((year % 4 == 0 && year % 100 !== 0) || (year % 4 == 0 && year % 400 == 0)) {
+    alert('Год является високосным(365 дней)');
+} else {
+    alert('Год не високосный(366 дней)');
 }
-
-
-checkLeapYear(year);
-
 
 
